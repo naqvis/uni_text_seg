@@ -1,0 +1,11 @@
+name: textseg
+version: 0.1.0
+
+authors:
+  - Ali Naqvi <syed.alinaqvi@gmail.com>
+description: |
+  Unicode Text Segmentation for Crystal. Currently supports determination of graphemes cluster boundaries.
+
+crystal: ">= 0.36.0, < 2.0.0"
+
+license: MIT
