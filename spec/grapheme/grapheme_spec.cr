@@ -631,7 +631,7 @@ describe TextSegment::Grapheme do
 
   it "test graphemes" do
     testcases.each_with_index do |tc, tn|
-      gr = TextSegment::Grapheme::Graphemes.new(tc[:original])
+      gr = TextSegment.graphemes(tc[:original])
       index = 0
       gr.each do |cluster|
         fail "Test case #{tn} \"#{tc[:original]}\" failed: More grapheme clusters return than expected" unless index < tc[:expected].size
@@ -647,7 +647,7 @@ describe TextSegment::Grapheme do
   end
 
   it "test str " do
-    gr = TextSegment::Grapheme::Graphemes.new("möp")
+    gr = TextSegment.each_grapheme("möp")
     gr.next
     gr.next
     val = gr.next.as(TextSegment::Grapheme::Cluster)
@@ -655,7 +655,7 @@ describe TextSegment::Grapheme do
   end
 
   it "test bytes " do
-    gr = TextSegment::Grapheme::Graphemes.new("A👩‍❤️‍💋‍👩B")
+    gr = TextSegment.each_grapheme("A👩‍❤️‍💋‍👩B")
     gr.next
     gr.next
     val = gr.next.as(TextSegment::Grapheme::Cluster)
@@ -665,14 +665,14 @@ describe TextSegment::Grapheme do
   end
 
   it "test position " do
-    gr = TextSegment::Grapheme::Graphemes.new("A👩‍❤️‍💋‍👩B")
+    gr = TextSegment.each_grapheme("A👩‍❤️‍💋‍👩B")
     gr.next
     val = gr.next.as(TextSegment::Grapheme::Cluster)
     {1, 28}.should eq(val.positions)
   end
 
   it "test reset " do
-    gr = TextSegment::Grapheme::Graphemes.new("möp")
+    gr = TextSegment.each_grapheme("möp")
     gr.next
     gr.next
     gr.next

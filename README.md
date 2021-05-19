@@ -31,7 +31,7 @@ This shard provides a tool to iterate over these grapheme clusters. This may be 
 ```crystal
 require "textseg"
 
-TextSegment.graphemes("🔮👍🏼!").each do |cluster|
+TextSegment.each_grapheme("🔮👍🏼!") do |cluster|
   pp cluster.codepoints
   pp cluster.positions
   pp cluster.str
