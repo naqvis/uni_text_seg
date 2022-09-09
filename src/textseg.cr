@@ -1,7 +1,7 @@
 # Shard `TextSegment` implements Unicode Text Segmentation according to [Unicode Standard Annex #29](http://unicode.org/reports/tr29/) (Unicode version 12.0.0)
 # to determine the grapheme cluster boundaries of unicode text.
 module TextSegment
-  VERSION = "0.1.2"
+  VERSION = "0.1.3"
 
   # returns an array of all Unicode extended grapheme clusters, specified in the Unicode Standard Annex #29. Grapheme clusters correspond to
   # "user-perceived characters". These characters often consist of multiple code points (e.g. the "woman kissing woman" emoji consists of 8 code points:
